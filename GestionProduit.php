@@ -17,5 +17,18 @@ class GestionProduit{
         } catch (PDOException $e) {
             echo "Erreur lors de l'ajout du produit : " . $e->getMessage();
         }
+    }   
+
+    // MEthode pour recuperer les produits
+    public function getProduits(){
+        try {
+            $sql = "SELECT * FROM produits";
+            $stmt = $this->connexion->prepare($sql);
+            $stmt->execute();
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        } catch (PDOException $e) {
+            echo "Erreur lors de la récupération des produits : " . $e->getMessage();
+            return [];
+        }
     }
 }

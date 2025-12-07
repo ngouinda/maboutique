@@ -20,6 +20,7 @@ require_once 'GestionProduit.php';
 $gestionProduit = new GestionProduit($bdd);
  $gestionProduit->ajouterProduit('chargeur', 29.99);
 
+
 // // Traitement du formulaire
 // if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 //     $nom = htmlspecialchars($_POST['nom_produit']);
